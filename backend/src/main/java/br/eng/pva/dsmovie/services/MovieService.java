@@ -18,11 +18,21 @@ public class MovieService {
 	@Autowired
 	private MovieRepository repository;
 	
+	// return a page(s) 
 	@Transactional(readOnly = true)
 	public Page<MovieDTO> findAll(Pageable pageable) {
 		Page<Movie> result = repository.findAll(pageable);
 		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
 		return page;	
+		
+	}
+	
+	// return a movie
+	@Transactional(readOnly = true)
+	public MovieDTO findBYId(Long id) {
+		Movie result = repository.findById(id).get();
+		MovieDTO  dto = new MovieDTO(result);
+		return dto;	
 		
 	}
 
