@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.eng.pva.dsmovie.dto.MovieDTO;
 import br.eng.pva.dsmovie.dto.ScoreDTO;
 import br.eng.pva.dsmovie.entities.Movie;
 import br.eng.pva.dsmovie.entities.Score;
@@ -27,7 +28,7 @@ public class ScoreService {
 	private ScoreRepository scoreRepository;
 	
 	@Transactional
-	public void saveSocre(ScoreDTO dto) {
+	public MovieDTO saveSocre(ScoreDTO dto) {
 		
 		User user = userRepository.findByEmail(dto.getEmail());
 		if (user == null) {
@@ -45,11 +46,19 @@ public class ScoreService {
 		// save and flush to db & return a new reference to object:
 		score = scoreRepository.saveAndFlush(score);
 		
-		// Two ways to recalculate the new score:
-		// As usual by Nelio
-		// Or newScore = (Score * numAvaliation + score)/(numAvaliation +1)
+		double sum = 0;
+		for ( Score s : movie.getScores()) {
+			sum += s.getValue();
+		}
+		double avg = sum / movie.getScores().size();
+		movie.setScore(avg);
+		movie.setCount(movie.getScores().size());
 		
+		// saving into database:
+		movie = movieRepository.save(movie);
 		
+		return new MovieDTO(movie);
+				
 	}
 	
 	

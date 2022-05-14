@@ -1,5 +1,6 @@
 package br.eng.pva.dsmovie.contollers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,15 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.eng.pva.dsmovie.dto.MovieDTO;
 import br.eng.pva.dsmovie.dto.ScoreDTO;
+import br.eng.pva.dsmovie.services.ScoreService;
 
 
 @RestController
 @RequestMapping(value = "/scores")
 public class ScoreController {
+	
+	@Autowired
+	private ScoreService service;
 
-	@PutMapping(value = "/{id}")
+	@PutMapping
 	public MovieDTO saveScore(@RequestBody ScoreDTO dto){
-		return null;		
+		MovieDTO movieDto = service.saveSocre(dto);
+		return movieDto;		
 	}
 
 }
