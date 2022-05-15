@@ -44,12 +44,13 @@ function Listing() {
             });
     }, [pageNumber])
 
-
-
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
 
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange= {handlePageChange} />
             {/* Using Bootstrap's breakpoints and classes container, row, col 
                 col-sm-6 represents, by example, if sm < 576px the container will ocupy 6 
                 of 12 Boostrap's total columns
