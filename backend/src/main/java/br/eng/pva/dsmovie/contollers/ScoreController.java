@@ -25,3 +25,6 @@ public class ScoreController {
 	}
 
 }
+
+
+// To access h2 db use the url: localhost:8080/h2-console

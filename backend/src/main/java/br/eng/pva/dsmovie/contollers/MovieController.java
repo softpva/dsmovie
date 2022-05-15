@@ -34,3 +34,9 @@ public class MovieController {
 
 // URL Para consultar a 2# página de 12 em 12 filmes, p.exemplo:
 // http://localhost:8080/movies?size=12&page=1
+
+// After test the controllers classes in Postman
+// we can change src/mais/resources/application-properties to
+// configure other profiles projects beside the profile test (h2: memory)
+// in the order dev profile (postgres: local) and prod profile (cloud)
+// and create a files system.properties on project root (boot).
