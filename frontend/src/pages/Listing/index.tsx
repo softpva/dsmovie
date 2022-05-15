@@ -1,8 +1,19 @@
+import axios from "axios";
 import MovieCard from "components/MovieCard";
 // import MovieScore from "components/MovieScore";
 import Pagination from "components/Pagination";
+import { BASE_URL } from "utils/requests";
 
 function Listing() {
+
+    // FORMA ERRADA SÓ PARA TESTE:
+    // axios.get is a promisse an async operation
+    // when operation return the 'then' commad run the function inside it
+    axios.get(`${BASE_URL}/movies?size=12&page=1`)
+            .then(response => {
+                console.log(response.data);
+            } ); 
+    
 
     return (
         <>
