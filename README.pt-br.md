@@ -4,34 +4,33 @@
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](./README.es.md)
   
 
-# About
-> DSMovie is a full stack application developed during Spring-React week hosted by DevSuperior - Escola de Programação. (https://devsuperior.com.br/cursos)
+# Sobre
+> DSMovie é uma aplicação full stack desenvolvida durante a semana Spring-React oferecida por DevSuperior - Escola de Programação. (https://devsuperior.com.br/cursos)
 >
-> This application fetches a defined set of movies, shows them and allows the user to evaluate each chosen movie.
+> Esta aplicação busca um conjunto definido de filmes, mostra-os e permite que o usuário avalie um filme de sua escolha.
 >
-> [Based on Spring-React week by DevSup ](https://github.com/devsuperior/sds-dsmovie)
+> [Baseado na semana Spring-React por DevSup ](https://github.com/devsuperior/sds-dsmovie)
 >
 > [![NPM](https://img.shields.io/npm/l/react)](./LICENSE) 
 
-
 # Layouts
-> ## First Page
-> ![first page](./readme/page_1.gif "First Page")
+> ## Página Inicial
+> ![first page](./readme/page_1.gif "Página Inicial")
 >
-> ## After clicking the 'Avaliar' button
-> ![eval page](./readme/star_a_movie.gif "Eval Page")
+> ## Após clicar em um botão avaliar
+> ![eval page](./readme/star_a_movie.gif "Página de Avaliação")
 >
-> ## After setting five stars for a movie
-> ![after eval](./readme/after_eval.gif "After eval")
+> ## Página Inicial após avaliar com 5 estrelas um dos filmes.
+> ![after eval](./readme/after_eval.gif "Depois de avaliar")
 
 # Models
-> ## Spring Boot Architecture
+> ## Arquitetura Spring Boot
 > ![Springboot arch](./readme/springboot_arq.gif)  
 
-> ## Database model
+> ## Modelo do banco de dados
 > ![model database](./readme/model_database.gif)
 
-# Tecnologies
+# Tecnologias
 > ## Back end
 > - Java
 > - H2 (dev)
@@ -55,37 +54,33 @@
 > - Yarn
 > - Node
 
-# Kick off
+# Rodando a aplicação
 > ## Back end
-> Launch Spring Boot (Spring,JPA,Hibernate,Tomcat(port: 8080 http)) by Maven:
+> Iniciar Spring Boot (Spring,JPA,Hibernate,Tomcat(port: 8080 http)) via Maven:
 > 
 >        cd backend
 >        ./mvnw spring-boot:run
->        
+> 
+> Ou
+>       
 > 'Fat' jar:
 >
 >        cd backend
 >        ./mvnw clean install
 >        cd target
 >        java -jar <artifact-name>.jar
-> artifact-name = artifactId + version (on pom.xml)
+> artifact-name = artifactId + version (em pom.xml)
 >
 > ## Front end
-> Launch node webpack at localhost:3000 by Yarn:
+> Iniciar node webpack em localhost:3000 via Yarn:
 >
 >        cd frontend
 >        yarn start
 
-# Co-author
+# Co-autor
 > Pedro Vitor Abreu
 >
 > <soft.pva@gmail.com>
 >
 > <https://github.com/softpva>
 >
-
-
-
-
-
-
