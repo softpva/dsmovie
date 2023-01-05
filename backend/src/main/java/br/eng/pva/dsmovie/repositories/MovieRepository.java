@@ -6,4 +6,4 @@ import br.eng.pva.dsmovie.entities.Movie;
 
 public interface MovieRepository extends JpaRepository<Movie, Long>{
 
-}
+} 
